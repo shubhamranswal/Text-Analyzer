@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
+
+*{
+  margin: 0 0 0 0;
+  overflow-x: hidden;
+  background-image: url(https://i1.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1);
+}
+
+h1{
+  font-family: 'Recursive';
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+  font-size: 40px;
+  color: whitesmoke;
+}
+.text_edit {
+  margin-top: 5px;
+  padding: 1%;
+  font-family:'Recursive' ;
+  font-size: 15px;
+  font-weight: 400;
+  border-radius: 10px;
+  border: solid whitesmoke;
+  color: darkblue;
+  background: beige;
+  height: 75vh;
+  width: 95vw;
+}
+.aa{
+  display: flex;
+  justify-content: center;
+}
+#view_count {
+  padding: 1%;
+  font-family:'Recursive' ;
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  color: whitesmoke;
+}
