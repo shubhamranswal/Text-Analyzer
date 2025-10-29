@@ -147,8 +147,8 @@ h1 {
   transition: all 0.3s ease;
   cursor: pointer;
   transform: scale(1);
+  
 }
-
 .stat-card:hover {
   background: rgba(255, 255, 255, 0.25);
   transform: scale(1.08) rotate(1deg);
