@@ -1,29 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Analyzer</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/js/main.js" type="text/javascript"></script>
-    <link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="assets/img/favicon-16x16.png">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Analyzer</title>
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JS -->
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
 </head>
 
 <body onload="view_count()">
-    <h1><b><u>Text Analyzer</b></u></h1>
-    <div class="aa">
-        <textarea class="text_edit" id="my_text" placeholder="Enter your content here..."></textarea>
-    </div>
-    <div id="view_count">
-    </div>
-    <button style="position: fixed; bottom: 20px; right: 20px;"><a class="l2" href="https://shubhamranswal.github.io/"
-            target="_blank" rel="noopener noreferrer"
-            style="color: azure; font-family: Recursive;border: 5px; border-color: aliceblue;">My Personal
-            Website</a></button>
-</body>
 
+  <div id="particles"></div> <!-- background particles -->
+
+  <div class="container fade-in">
+    <div class="header">
+      <h1>✨ Text Analyzer ✨</h1>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </div>
+
+    <textarea id="my_text" class="text_edit" placeholder="Start typing or paste your content here..."></textarea>
+
+    <div class="stats">
+      <div class="stat-card">
+        <h3>📝 Words</h3>
+        <p id="word_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>🔠 Characters</h3>
+        <p id="char_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>⏱ Reading Time</h3>
+        <p id="read_time">0 min</p>
+      </div>
+    </div>
+
+    <a class="personal_link" href="https://shubham-ranswal.web.app" target="_blank" rel="noopener noreferrer">
+      Visit My Portfolio
+    </a>
+  </div>
+
+</body>
 </html>
