@@ -1,43 +1,95 @@
 @import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
 
-*{
-  margin: 0 0 0 0;
-  overflow-x: hidden;
-  background-image: url(https://i1.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1);
+:root {
+  --bg-light: beige;
+  --text-light: darkblue;
+  --accent: #00bcd4;
+  --btn-bg: #0078ff;
+  --btn-hover: #005bcc;
 }
 
-h1{
-  font-family: 'Recursive';
+* {
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Recursive', sans-serif;
+}
+
+body {
+  background-image: url("https://i1.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  color: var(--text-light);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+h1 {
   font-weight: 700;
   display: flex;
   justify-content: center;
-  margin-top: 1vh;
-  margin-bottom: 1vh;
+  margin-top: 2vh;
+  margin-bottom: 2vh;
   font-size: 40px;
   color: whitesmoke;
+  text-shadow: 2px 2px 4px #000000;
 }
-.text_edit {
+
+.text_edit, #my_text {
   margin-top: 5px;
   padding: 1%;
-  font-family:'Recursive' ;
-  font-size: 15px;
+  font-size: 16px;
   font-weight: 400;
   border-radius: 10px;
-  border: solid whitesmoke;
-  color: darkblue;
-  background: beige;
-  height: 75vh;
-  width: 95vw;
+  border: 2px solid whitesmoke;
+  background: var(--bg-light);
+  color: var(--text-light);
+  width: 90vw;
+  max-width: 800px;
+  height: 60vh;
+  outline: none;
+  resize: vertical;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
-.aa{
+
+#my_text:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 5px var(--accent);
+}
+
+.controls {
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 15px;
 }
-#view_count {
-  padding: 1%;
-  font-family:'Recursive' ;
-  font-size: 24px;
+
+.controls button {
+  background-color: var(--btn-bg);
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 15px;
   font-weight: 500;
-  text-align: center;
-  color: whitesmoke;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.controls button:hover {
+  background-color: var(--btn-hover);
+  transform: scale(1.05);
+}
+
+.stats {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(6px);
+  border-radius: 10px;
+  margin: 16px auto;
+  padding: 12px;
+  width: 90vw;
+  max-width: 800px;
+  color: var(--text-light);
 }
