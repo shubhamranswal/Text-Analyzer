@@ -6,15 +6,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Text Analyzer</title>
 
+  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
+  <!-- Styles -->
   <link rel="stylesheet" href="assets/css/style.css" />
+
+  <!-- JS -->
   <script src="assets/js/main.js" defer></script>
+
+  <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
 </head>
 
 <body onload="view_count()">
 
-  <div id="particles"></div>
+  <div id="particles"></div> <!-- background particles -->
 
   <div class="container fade-in">
     <div class="header">
@@ -22,7 +29,7 @@
       <button id="themeToggle" class="theme-toggle">🌙</button>
     </div>
 
-    <textarea id="my_text" class="text_edit" placeholder="Start typing or paste your content here..." spellcheck="true"></textarea>
+    <textarea id="my_text" class="text_edit" placeholder="Start typing or paste your content here..."></textarea>
 
     <div class="stats">
       <div class="stat-card">
@@ -34,24 +41,9 @@
         <p id="char_count">0</p>
       </div>
       <div class="stat-card">
-        <h3>📏 Lines</h3>
-        <p id="line_count">0</p>
-      </div>
-      <div class="stat-card">
-        <h3>💬 Sentences</h3>
-        <p id="sentence_count">0</p>
-      </div>
-      <div class="stat-card">
         <h3>⏱ Reading Time</h3>
         <p id="read_time">0 min</p>
       </div>
-    </div>
-
-    <div class="controls">
-      <button id="clear_btn">🧹 Clear</button>
-      <button id="copy_btn">📋 Copy</button>
-      <button id="download_btn">⬇️ Download</button>
-      <button id="spell_btn">🔍 Spell Check</button>
     </div>
 
     <a class="personal_link" href="https://shubham-ranswal.web.app" target="_blank" rel="noopener noreferrer">
