@@ -1,47 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Text Analyzer Pro</title>
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Text Analyzer</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <script src="assets/js/main.js" defer></script>
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
 </head>
 
-<body onload="update_stats()">
+<body onload="view_count()">
 
-    <header>
-        <h1>Text Analyzer Pro ✨</h1>
-    </header>
+  <div id="particles"></div>
 
-    <main class="container">
-        <textarea id="my_text" placeholder="Type or paste your text here..."></textarea>
+  <div class="container fade-in">
+    <div class="header">
+      <h1>✨ Text Analyzer ✨</h1>
+      <button id="themeToggle" class="theme-toggle">🌙</button>
+    </div>
 
-        <div class="controls">
-            <button onclick="clear_text()"> Clear</button>
-            <button onclick="copy_text()"> Copy</button>
-            <button onclick="download_text()"> Download</button>
-            <button onclick="check_spelling()"> Check Spelling</button>
-        </div>
+    <textarea id="my_text" class="text_edit" placeholder="Start typing or paste your content here..." spellcheck="true"></textarea>
 
-        <div class="stats">
-            <p id="word_count">Words: 0</p>
-            <p id="char_count">Characters: 0</p>
-            <p id="line_count">Lines: 0</p>
-            <p id="sentence_count">Sentences: 0</p>
-            <p id="reading_time">Reading Time: 0 min</p>
-        </div>
+    <div class="stats">
+      <div class="stat-card">
+        <h3>📝 Words</h3>
+        <p id="word_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>🔠 Characters</h3>
+        <p id="char_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>📏 Lines</h3>
+        <p id="line_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>💬 Sentences</h3>
+        <p id="sentence_count">0</p>
+      </div>
+      <div class="stat-card">
+        <h3>⏱ Reading Time</h3>
+        <p id="read_time">0 min</p>
+      </div>
+    </div>
 
-        <div id="spelling_results"></div>
-    </main>
+    <div class="controls">
+      <button id="clear_btn">🧹 Clear</button>
+      <button id="copy_btn">📋 Copy</button>
+      <button id="download_btn">⬇️ Download</button>
+      <button id="spell_btn">🔍 Spell Check</button>
+    </div>
 
-    <footer>
-        <p><a href="https://shubhamranswal.github.io/" target="_blank"> Visit My Portfolio</a></p>
-    </footer>
+    <a class="personal_link" href="https://shubham-ranswal.web.app" target="_blank" rel="noopener noreferrer">
+      Visit My Portfolio
+    </a>
+  </div>
 
-    <script src="assets/js/main.js" type="text/javascript"></script>
 </body>
-
 </html>

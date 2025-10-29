@@ -1,95 +1,226 @@
-@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 :root {
-  --bg-light: beige;
-  --text-light: darkblue;
-  --accent: #00bcd4;
-  --btn-bg: #0078ff;
-  --btn-hover: #005bcc;
+  --bg-color: linear-gradient(135deg, #141E30, #243B55);
+  --text-color: #fff;
+  --card-bg: rgba(255, 255, 255, 0.15);
+  --highlight: #FFD700;
+  --accent: #ff5e62;
+}
+
+body.light {
+  --bg-color: linear-gradient(135deg, #f6f9fc, #e9ecef);
+  --text-color: #222;
+  --card-bg: rgba(0, 0, 0, 0.05);
+  --highlight: #ff6600;
+  --accent: #007bff;
 }
 
 * {
   margin: 0;
-  overflow-x: hidden;
-  font-family: 'Recursive', sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  background-image: url("https://i1.wp.com/codemyui.com/wp-content/uploads/2016/11/pure-css-snow-animation.gif?fit=880%2C440&ssl=1");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
-  color: var(--text-light);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  min-height: 100vh;
+  background: var(--bg-color);
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+#particles {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: radial-gradient(circle, rgba(255,255,255,0.2) 1px, transparent 1px);
+  background-size: 40px 40px;
+  animation: moveParticles 10s linear infinite;
+  z-index: -1;
+}
+
+@keyframes moveParticles {
+  from { background-position: 0 0; }
+  to { background-position: 40px 40px; }
+}
+
+.container {
+  width: 95%;
+  max-width: 900px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border-radius: 20px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+  transition: all 0.3s ease;
+}
+
+.container:hover {
+  transform: translateY(-3px);
+}
+
+.fade-in {
+  animation: fadeInUp 1.2s ease both;
+}
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
 }
 
 h1 {
-  font-weight: 700;
-  display: flex;
-  justify-content: center;
-  margin-top: 2vh;
-  margin-bottom: 2vh;
-  font-size: 40px;
-  color: whitesmoke;
-  text-shadow: 2px 2px 4px #000000;
+  font-weight: 600;
+  font-size: 2.2rem;
+  background: linear-gradient(90deg, var(--highlight), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
-.text_edit, #my_text {
-  margin-top: 5px;
-  padding: 1%;
-  font-size: 16px;
-  font-weight: 400;
-  border-radius: 10px;
-  border: 2px solid whitesmoke;
-  background: var(--bg-light);
-  color: var(--text-light);
-  width: 90vw;
-  max-width: 800px;
-  height: 60vh;
-  outline: none;
-  resize: vertical;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-#my_text:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 5px var(--accent);
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 15px;
-}
-
-.controls button {
-  background-color: var(--btn-bg);
-  color: white;
+.theme-toggle {
   border: none;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 15px;
-  font-weight: 500;
+  background: rgba(255,255,255,0.2);
+  color: var(--text-color);
+  font-size: 1.3rem;
+  padding: 8px 12px;
+  border-radius: 10px;
   cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.3s ease;
 }
 
-.controls button:hover {
-  background-color: var(--btn-hover);
-  transform: scale(1.05);
+.theme-toggle:hover {
+  background: rgba(255,255,255,0.4);
+}
+
+.text_edit {
+  width: 100%;
+  height: 55vh;
+  padding: 18px;
+  border: none;
+  border-radius: 12px;
+  resize: none;
+  font-size: 16px;
+  color: #222;
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.3);
+  outline: none;
+  transition: box-shadow 0.5s ease;
+}
+
+.text_edit:focus {
+  box-shadow: 0 0 20px var(--highlight);
 }
 
 .stats {
-  background: rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(6px);
-  border-radius: 10px;
-  margin: 16px auto;
-  padding: 12px;
-  width: 90vw;
-  max-width: 800px;
-  color: var(--text-light);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+  gap: 20px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 160px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  transform: scale(1);
+}
+
+.stat-card:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.08) rotate(1deg);
+}
+
+.stat-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--highlight);
+  margin-bottom: 10px;
+}
+
+.stat-card p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.personal_link {
+  display: inline-block;
+  margin-top: 30px;
+  padding: 12px 25px;
+  background: linear-gradient(90deg, var(--highlight), var(--accent));
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.personal_link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--highlight);
+}
+
+@media (max-width: 600px) {
+  .text_edit {
+    height: 45vh;
+  }
+  .stat-card {
+    width: 100%;
+  }
+}
+.btn-container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.action-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  background: linear-gradient(90deg, var(--accent), var(--highlight));
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 10px var(--highlight);
+}
+
+/* Reading progress bar */
+.progress-container {
+  width: 100%;
+  height: 10px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 25px;
+}
+
+.progress-bar {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--highlight), var(--accent));
+  transition: width 0.4s ease;
 }
